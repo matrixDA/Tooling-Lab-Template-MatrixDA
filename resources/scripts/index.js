@@ -10,8 +10,8 @@ const gameHistoryParagraph = document.getElementById(`game-history`);
 const resetGameButton = document.getElementById(`reset-game-button`);
 
 // instantiate the game object from the `RockPaperScissors` class.
-var game;
-var username;
+let game;
+let username;
 
 // hide gamescreen
 gameScreen.classList.add(`d-none`);
@@ -38,7 +38,7 @@ startGameButton.addEventListener(`click`, function (e) {
   gameScreen.classList.remove(`d-none`);
   resetGameButton.classList.remove(`d-none`);
   updateScoreTallyUI();
-     updateGameHistoryUI();
+  updateGameHistoryUI();
   // Complete
 });
 
@@ -53,13 +53,13 @@ goButton.addEventListener(`click`, function (e) {
 });
 
 //reset-game-button
-resetGameButton.addEventListener('click', function(e) { 
-     e.preventDefault();
-  userName.value = '';
-     username = '';
+resetGameButton.addEventListener(`click`, function(e) { 
+  e.preventDefault();
+  userName.value = ``;
+  username = ``;
   game = new RockPaperScissors(username);
 
   welcomeScreen.classList.remove(`d-none`);
-     gameScreen.classList.add(`d-none`);
+  gameScreen.classList.add(`d-none`);
   resetGameButton.classList.add(`d-none`);
 })
